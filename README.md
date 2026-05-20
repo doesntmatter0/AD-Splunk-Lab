@@ -92,11 +92,11 @@ graph TD
     subgraph "VirtualBox Internal Network (192.168.10.0/24)"
         DC01["<b>DC01: Domain Controller</b><br/>Windows Server 2022<br/>Splunk Enterprise (Indexer)<br/>192.168.10.10"]
         
-        C1["<b>Client 1</b><br/>Chug Biggums<br/>192.168.10.20"]
-        C2["<b>Client 2</b><br/>Chester McBoof<br/>192.168.10.30"]
-        C3["<b>Client 3</b><br/>Fargle Von Bargle<br/>192.168.10.40"]
-        C4["<b>Client 4</b><br/>Jake Trembler<br/>192.168.10.50"]
-        C5["<b>Client 5</b><br/>Jean Shotblock<br/>192.168.10.60"]
+        C1["<b>Client 1</b><br/>Client1<br/>192.168.10.20"]
+        C2["<b>Client 2</b><br/>Client2<br/>192.168.10.30"]
+        C3["<b>Client 3</b><br/>Client3<br/>192.168.10.40"]
+        C4["<b>Client 4</b><br/>Client4<br/>192.168.10.50"]
+        C5["<b>Client 5</b><br/>Client5<br/>192.168.10.60"]
     end
 
     %% Log Forwarding Traffic
