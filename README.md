@@ -1,5 +1,4 @@
 # AD-Splunk-Lab
-```mermaid
 Built a fully functional Active Directory home lab enviornment in order to simulate a corporate SOC network and gain skills for a SOC enviornment. I used Splunk Enterprise to simulate a SIEM. This lab uses Windows Server 22 as a domain controller, multiple workstations joined from a windows 11 evaluation domain, and a Splunk Enterprise instanace collecting and analysing data and security events in real time.
 
 
@@ -88,6 +87,7 @@ Simulate additional attacks (pass-the-hash, Kerberoasting)
 Integrate AI-powered log analysis using Python, LangChain, VirusTotal and Gemini
 Fully Operational Ticketing System
 
+```mermaid
 graph TD
     subgraph "VirtualBox Internal Network (192.168.10.0/24)"
         DC01["<b>DC01: Domain Controller</b><br/>Windows Server 2022<br/>Splunk Enterprise (Indexer)<br/>192.168.10.10"]
