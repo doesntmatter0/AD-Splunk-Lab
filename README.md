@@ -67,11 +67,10 @@ Account Lockouts (Event ID 4740)
 
 
 **Screenshots**
-
-<img width="2541" height="1360" alt="Screenshot 2026-05-19 230025" src="https://github.com/user-attachments/assets/ea926c4d-ccf9-4f01-8528-cd17db121c83" />
-<img width="1461" height="629" alt="Screenshot 2026-05-20 002111" src="https://github.com/user-attachments/assets/0ced2c5b-3906-492f-a42e-bc56847098e7" />
-<img width="2536" height="1295" alt="Screenshot 2026-05-20 010059" src="https://github.com/user-attachments/assets/31dfe944-21c9-46a2-8921-2f1f1689e8ac" />
-<img width="2550" height="1311" alt="Screenshot 2026-05-20 005736" src="https://github.com/user-attachments/assets/2fdcf468-994e-4b4e-ac32-a869ab7bae90" />
+<img width="2560" height="1440" alt="Screenshot (40)" src="https://github.com/user-attachments/assets/1ce9e7d7-ce90-4a28-bddd-233c70ddf100" />
+<img width="2560" height="1440" alt="Screenshot (41)" src="https://github.com/user-attachments/assets/02180a30-5e2d-4daf-b2ca-46d6ad72aa69" />
+<img width="2560" height="1440" alt="Screenshot (39)" src="https://github.com/user-attachments/assets/3d7e7462-241f-46c4-9664-3dbddff81ac0" />
+<img width="2560" height="1440" alt="Screenshot (42)" src="https://github.com/user-attachments/assets/6cce13da-2338-4c6c-8c28-67f9d5feced4" />
 
 
 **Future Goals**
