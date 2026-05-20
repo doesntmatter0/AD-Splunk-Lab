@@ -87,19 +87,27 @@ Simulate additional attacks (pass-the-hash, Kerberoasting)
 Integrate AI-powered log analysis using Python, LangChain, VirusTotal and Gemini
 Fully Operational Ticketing System
 
-
 graph TD
-    subgraph Virtual_Network ["Internal Lab Network (192.168.10.x)"]
-        DC01["DC01: Windows Server 2022 (AD/DNS/Splunk) <br/> 192.168.10.10"]
-        C1["Client 1: Chug Biggums <br/> 192.168.10.20"]
-        C2["Client 2: Chester McBoof <br/> 192.168.10.30"]
-        C3["Client 3: Fargle Von Bargle <br/> 192.168.10.40"]
+    subgraph "VirtualBox Internal Network (192.168.10.0/24)"
+        DC01["<b>DC01: Domain Controller</b><br/>Windows Server 2022<br/>Splunk Enterprise (Indexer)<br/>192.168.10.10"]
+        
+        C1["<b>Client 1</b><br/>Chug Biggums<br/>192.168.10.20"]
+        C2["<b>Client 2</b><br/>Chester McBoof<br/>192.168.10.30"]
+        C3["<b>Client 3</b><br/>Fargle Von Bargle<br/>192.168.10.40"]
+        C4["<b>Client 4</b><br/>Jake Trembler<br/>192.168.10.50"]
+        C5["<b>Client 5</b><br/>Jean Shotblock<br/>192.168.10.60"]
     end
 
-    UF_Log["Splunk Universal Forwarder"]
-    
-    C1 -- "Log Shipping (Port 9997)" --> DC01
-    C2 -- "Log Shipping (Port 9997)" --> DC01
-    C3 -- "Log Shipping (Port 9997)" --> DC01
-    DC01 -- "Real-time Monitoring" --> Splunk[("Splunk Dashboard")]
+    %% Log Forwarding Traffic
+    C1 -- "UF: Port 9997" --> DC01
+    C2 -- "UF: Port 9997" --> DC01
+    C3 -- "UF: Port 9997" --> DC01
+    C4 -- "UF: Port 9997" --> DC01
+    C5 -- "UF: Port 9997" --> DC01
 
+    %% Analysis flow
+    DC01 -- "Real-time Analysis" --> Dash[("SOC Security Dashboard")]
+
+    %% Styling for better visibility
+    style DC01 fill:#f9f,stroke:#333,stroke-width:2px
+    style Dash fill:#9f9,stroke:#333,stroke-width:2px
