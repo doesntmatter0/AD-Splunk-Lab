@@ -1,2 +1,2 @@
 # AD-Splunk-Lab
-Active Directory lab using Windows Server 22, Windows 11 Eval, and Splunk
+Built a fully functional Active Directory home lab enviornment in order to simulate a corporate SOC network and gain skills for a SOC enviornment. I used Splunk Enterprise to simulate a SIEM. This lab uses Windows Server 22 as a domain controller, multiple workstations joined from a windows 11 evaluation domain, and a Splunk Enterprise instanace collecting and analysing data and security events in real time.
