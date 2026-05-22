@@ -1,6 +1,5 @@
-# AD-Splunk-Lab
-Built a fully functional Active Directory home lab enviornment in order to simulate a corporate SOC network and gain skills for a SOC enviornment. I used Splunk Enterprise to simulate a SIEM. This lab uses Windows Server 22 as a domain controller, multiple workstations joined from a windows 11 evaluation domain, and a Splunk Enterprise instanace collecting and analysing data and security events in real time.
-
+# AD Home-Lab with Splunk SIEM & Suricata IDS
+Built a fully functional Active Directory home lab environment to simulate a corporate network and practice security monitoring. The lab includes a Windows Server 2022 domain controller, a Windows 11 domain-joined workstation, a Suricata IDS for network monitoring, and Splunk Enterprise as the central SIEM collecting and correlating security events in real time.
 
 **Tools & Technologies**
 
@@ -12,10 +11,14 @@ Splunk Universal Forwarder — Log shipping agent installed on both VMs
 Active Directory Domain Services (AD DS) — User and computer management
 DNS — Internal domain name resolution for lab.local
 
+Ubuntu Server 24.04 — Host for Suricata IDS
+Suricata with a Emerging Threats Open Ruleset - Open source network intrusion detection system with 50,000+ Suricata detection rules added on.
+
 
 **Network Architecture**
 
 DC01: Domain Controller / Splunk Server with ip static set as: 192.168.10.10
+Suricata: IDS Network IDS / Ubuntu server with ip static attatched to 192.168.10.30
 Client1: Domain-joined Workstation  ip static set as: 192.168.10.20
 Client2: Domain-joined Workstation  ip static set as: 192.168.10.30
 Client3: Domain-joined Workstation  ip static set as: 192.168.10.40
@@ -65,6 +68,15 @@ Failed Login Attempts (Event ID 4625)
 Successful Logins (Event ID 4624)
 Account Lockouts (Event ID 4740)
 
+Suricata Network Alerts — table with timestamp, signature, source IP, destination IP
+
+Phase 4 — Suricata IDS Deployment
+
+Deployed Ubuntu Server 24.04 VM as a dedicated IDS node
+Installed and configured Suricata 8.0 to monitor internal network traffic
+Downloaded and enabled the Emerging Threats Open ruleset (50,000+ rules)
+Created custom detection rules for lab-specific traffic patterns
+Configured Suricata to generate alerts for ICMP, SSH, port scans, and suspicious connections
 
 **Screenshots**
 <img width="2560" height="1440" alt="Screenshot (40)" src="https://github.com/user-attachments/assets/1ce9e7d7-ce90-4a28-bddd-233c70ddf100" />
@@ -80,9 +92,11 @@ For the Windows 11 Eval, booting it in the Virtualbox VM would not boot the OS, 
 
 The Windows 11 client was unable to join the lab.local domain and could not reach the Domain Controller, despite being on the same virtual network. and after plenty of trial and error, I discovered that the Windows Defender Firewall was not allowing traffic to be received on port 9997. I fixed this by enabling the "Receiving" port (9997) within the Splunk Enterprise settings and then configured an inbound firewall rule on the Windows Server to allow traffic over TCP port 9997.
 
+Could not copy/paste commands into the headless Ubuntu VM due to Guest Additions limitations (I do not enjoy typingn them out myself). Resolved by configuring a VirtualBox shared folder to transfer the installer file from the host machine.
+
+Initial Suricata install had minimal rules loaded. Resolved by running suricata-update to download the full Emerging Threats Open ruleset (50,000+ signatures) and copying local rules to the correct directory.
 
 **Future Goals**
-Add Suricata IDS for network-based intrusion detection
 Simulate additional attacks (pass-the-hash, Kerberoasting)
 Integrate AI-powered log analysis using Python, LangChain, VirusTotal and Gemini
 Fully Operational Ticketing System
